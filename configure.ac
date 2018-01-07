@@ -1,11 +1,11 @@
 dnl require autoconf 2.60 (AS_ECHO/AS_ECHO_N)
 AC_PREREQ([2.60])
-define(_CLIENT_VERSION_MAJOR, 2)
-define(_CLIENT_VERSION_MINOR, 1)
-define(_CLIENT_VERSION_REVISION, 0)
+define(_CLIENT_VERSION_MAJOR, 4)
+define(_CLIENT_VERSION_MINOR, 0)
+define(_CLIENT_VERSION_REVISION, 1)
 define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
-define(_COPYRIGHT_YEAR, 2016)
+define(_COPYRIGHT_YEAR, 2018)
 AC_INIT([VERGE Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/vergecurrency/VERGE/issues],[verge],[http://VERGEcurrency.com/])
 AC_CONFIG_AUX_DIR([src/build-aux])
 AC_CONFIG_MACRO_DIR([src/m4])
@@ -163,11 +163,11 @@ AC_ARG_ENABLE([debug],
 
 if test "x$enable_debug" = xyes; then
     if test "x$GCC" = xyes; then
-        CFLAGS="-g3 -O0 -DDEBUG"
+        CFLAGS="-g3 -Og -DDEBUG"
     fi
     
     if test "x$GXX" = xyes; then
-        CXXFLAGS="-g3 -O0 -DDEBUG"
+        CXXFLAGS="-g3 -Og -DDEBUG"
     fi
 fi 
 
